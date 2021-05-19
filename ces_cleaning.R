@@ -3,6 +3,8 @@
 # -tutorial-on-pulling-data-for-assignment-1.html#section-
 # canadian-election-study                          
 
+library(tidyverse)
+
 # In this code you can load in and clean the survey data 
 
 # First, if you don't already have it, install the devtools package:
