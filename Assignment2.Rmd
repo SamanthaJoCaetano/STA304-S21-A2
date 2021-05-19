@@ -23,7 +23,7 @@ census_data <- read_csv("gss_clean.csv")
 
 # Here you can load in the survey data
 
-survey_data <- read_csv("ces_clean")
+survey_data <- read_csv("ces_clean.csv")
 
 ```
 
