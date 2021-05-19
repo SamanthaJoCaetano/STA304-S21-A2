@@ -15,6 +15,19 @@ library(tidyverse)
 
 
 
+```{r, include = FALSE}
+
+# Here you can load in the census data 
+
+census_data <- read_csv("gss_clean.csv")
+
+# Here you can load in the survey data
+
+survey_data <- read_csv("ces_clean")
+
+```
+
+
 ## Introduction
 
 <Here you should have a few paragraphs of text introducing the problem, getting the reader interested/ready for the rest of the report.>
@@ -30,51 +43,11 @@ library(tidyverse)
 
 <Type here a paragraph introducing the data, its context and as much info about the data collection process that you know.>
 
-
-```{r, include = FALSE}
-
-# Here you can load in and clean the census data (you may need to do the cleaning in a separate R script). 
-
-census_data <- read_csv("gss_clean.csv")
-
-# You may need additional chunks, in case you want to include some of the cleaning output.
-
-```
-
-
 <Type here a summary of the cleaning process (**only add in stuff beyond my original gss_cleaning.R code**). You only need to describe additional cleaning that you and your group did.> ]
 
-<Here is a resource for grabbing the CES2019 data: [https://awstringer1.github.io/sta238-book/section-short-tutorial-on-pulling-data-for-assignment-1.html#section-canadian-election-study](https://awstringer1.github.io/sta238-book/section-short-tutorial-on-pulling-data-for-assignment-1.html#section-canadian-election-study)>
-
 ```{r, include = FALSE}
 
-# Here you can load in and clean the survey data (you may need to do the cleaning in a separate R script). 
-# First, if you don't already have it, install the devtools package:
-# install.packages("devtools")
-
-# Now use devtools to install the cesR package directly from Github:
-# devtools::install_github("hodgettsp/cesR")
-
-# Load it like any other package:
-library(cesR)
-
-# There are many different CES datasets, and they have unique codes. 
-# See them with the get_cescodes() function:
-
-get_cescodes()
-
-# Now pick one, let's try ces2019_phone
-
-get_ces("ces2019_phone")
-
-survey_data <- ces2019_phone
-
-```
-
-
-```{r, include = FALSE}
-
-#### You will need to update/clean the code below based off the variables you want to use in your poststratification.
+#### You will need to update/clean the code below based off the variables you want to use in your post stratification.
 
 survey_data <- 
   survey_data %>% 
